@@ -23,12 +23,16 @@ function CreateArea(props) {
   }
 
   function submitNote(event) {
+    if(note.title==="" && note.content===""){
+      alert("Please enter title and note")
+    }else{
     props.onAdd(note);
     setNote({
       title: "",
       content: ""
     });
     event.preventDefault();
+    }
   }
 
   function expand() {
